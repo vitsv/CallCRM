@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Domain.Entities.EventCategory>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Event categories</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Code
+        </th>
+        <th>
+            Ia task
+        </th>
+        <th>
+            Icon
+        </th>
+        <th>
+            Description
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsTask)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Icon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EventCategoryID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EventCategoryID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EventCategoryID })
+        </td>
+    </tr>
+}
+
+</table>

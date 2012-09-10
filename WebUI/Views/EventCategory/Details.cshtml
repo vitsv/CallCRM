@@ -1,0 +1,40 @@
+﻿@model Domain.Entities.EventCategory
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Event category</legend>
+
+    <div class="display-label">Nama</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">Code</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Code)
+    </div>
+
+    <div class="display-label">Ii task</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsTask)
+    </div>
+
+    <div class="display-label">Icon</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Icon)
+    </div>
+
+    <div class="display-label">Description</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.EventCategoryID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

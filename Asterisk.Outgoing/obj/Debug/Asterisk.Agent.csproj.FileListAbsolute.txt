@@ -1,0 +1,13 @@
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\Asterisk.NET.Test\bin\Debug\Asterisk.NET.Test.exe
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\Asterisk.NET.Test\bin\Debug\Asterisk.NET.Test.pdb
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\Asterisk.NET.Test\bin\Debug\Asterisk.NET.dll
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\Asterisk.NET.Test\bin\Debug\Domain.dll
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\Asterisk.NET.Test\bin\Debug\EntityFramework.dll
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\Asterisk.NET.Test\bin\Debug\Asterisk.NET.pdb
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\Asterisk.NET.Test\bin\Debug\Domain.pdb
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\Asterisk.NET.Test\bin\Debug\EntityFramework.xml
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\Asterisk.NET.Test\obj\Debug\Asterisk.Agent.csprojResolveAssemblyReference.cache
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\Asterisk.NET.Test\obj\Debug\Asterisk.NET.Test.fastagi-mapping.resources
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\Asterisk.NET.Test\obj\Debug\Asterisk.Agent.csproj.GenerateResource.Cache
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\Asterisk.NET.Test\obj\Debug\Asterisk.NET.Test.exe
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\Asterisk.NET.Test\obj\Debug\Asterisk.NET.Test.pdb

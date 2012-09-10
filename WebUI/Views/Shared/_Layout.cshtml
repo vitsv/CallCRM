@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/jquery-ui-1.8.17.custom.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.6.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.8.11.min.js")" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        function checkForNewEvents() {
+
+            $.ajax({
+                url: 'http://@Request.Url.Host:@Request.Url.Port/home/checkfornewevents',
+                type: 'POST',
+                dataTypr: 'json',
+                data: { user: '@User.Identity.Name' },
+                error: function() {
+                    setTimeout(checkForNewEvents, 3000);
+                },
+                success: function (data) {
+                    if (data.state == 'RINGING') {
+                        if (data.inbound == true) {
+                            $('#event-box-inbound').html('Incoming call');
+                            $('#event-box').css('background-color', '#FF3300');
+                        } else {
+                            $('#event-box-inbound').html('Outgoing call');
+                            $('#event-box').css('background-color', '#00CC33');
+                        }
+                        $('#event-box-info').html(EventInfo(data.client, data.number, data.company, data.stage));
+                        $('#event-box-client-link').attr('href', 'Contact/Details/' + data.client_id);
+                        $('#event-box-event-link').attr('href', 'Events/Details/' + data.event_id);
+                        $('#event-box-close').hide();
+                        $('#event-box').show();
+                    }
+                    if (data.state == 'NOEVENTS') {
+                        $('#event-box-close').show();
+                    }
+                    setTimeout(checkForNewEvents, 3000);
+                }
+            });
+        }
+
+        function EventInfo(client, number, company, stage) {
+            return '<b><i>' + number + '</i></b>' + '<br /><b>' + client + '</b><br />' + company + '<br />' + stage;
+        }
+
+        $(document).ready(function () {
+            checkForNewEvents();
+            $('#event-box-close').click(function () {
+                $('#event-box').hide();
+            });
+        });
+
+        function CallToNumber(phone_number){
+            $.ajax({
+                url: 'http://@Request.Url.Host:@Request.Url.Port/home/callto',
+                type: 'POST',
+                dataTypr: 'json',
+                data: { number: phone_number },
+                error: function () {
+                    alert("Error when calling to number - " + phone_number);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="page">
+        <div id="header">
+            <div id="title">
+                <h1>
+                    <img src="@Url.Content("~/Content/images/logo.png")" />
+                    Call CRM</h1>
+            </div>
+            <div id="logindisplay">
+                @Html.Partial("_LogOnPartial")
+                
+            </div>
+            <div id="menucontainer">
+                <ul id="menu">
+                    <li>@Html.ActionLink("Persons", "Index", "Contact")</li>
+                    <li>@Html.ActionLink("Companys", "Index", "Company")</li>
+                    <li>@Html.ActionLink("Events", "Index", "Events")</li>
+                </ul>               
+            </div>
+
+            <div id="menucontainer" style="float: right; clear: none;">
+                <ul id="menu">
+                    <li>@Html.ActionLink("Employees", "Index", "Employee")</li>
+                    <li>@Html.ActionLink("Settings", "Settings", "Home")</li>
+                </ul>
+            </div>
+        </div>
+        <div id="main">
+            @RenderBody()
+        </div>
+        <div id="footer">
+        </div>
+    </div>
+
+    <div id="event-box" style="display:none">
+        <p><b><span id="event-box-inbound">Incoming call</span></b></p>
+        <p>
+            <span id="event-box-info">
+
+            </span>
+        </p>
+        <p>
+            <a href="#" id="event-box-client-link">Client</a>
+            <a href="#" id="event-box-event-link">Event</a>
+            <a href="#" id="event-box-close" style="display: none">Close</a>
+        </p>
+    </div>
+</body>
+</html>

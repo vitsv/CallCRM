@@ -1,0 +1,53 @@
+﻿@model Domain.Entities.AsteriskIVRStep
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>AsteriskIVRStep</legend>
+
+    <div class="display-label">KeyPress</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.KeyPress)
+    </div>
+
+    <div class="display-label">Action</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Action)
+    </div>
+
+    <div class="display-label">Data</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Data)
+    </div>
+
+    <div class="display-label">Submenu</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Submenu)
+    </div>
+
+    <div class="display-label">Step</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Step)
+    </div>
+
+    <div class="display-label">GoToStep</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GoToStep)
+    </div>
+
+    <div class="display-label">AsteriskIVRDefinition</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AsteriskIVRDefinition.Name)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+         @Html.ActionLink("Back to List", "Details","IVRDef",new { id = ViewBag.IVRDefenitionID}, null)
+    </p>
+}

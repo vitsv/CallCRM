@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Domain.Entities.AsteriskIVRStep>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            KeyPress
+        </th>
+        <th>
+            Action
+        </th>
+        <th>
+            Data
+        </th>
+        <th>
+            Submenu
+        </th>
+        <th>
+            Step
+        </th>
+        <th>
+            GoToStep
+        </th>
+        <th>
+            AsteriskIVRDefinition
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.KeyPress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Action)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Submenu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Step)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoToStep)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AsteriskIVRDefinition.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AsteriskIVRStepID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AsteriskIVRStepID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AsteriskIVRStepID })
+        </td>
+    </tr>
+}
+
+</table>

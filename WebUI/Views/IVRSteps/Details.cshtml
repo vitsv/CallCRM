@@ -1,0 +1,50 @@
+﻿@model Domain.Entities.AsteriskIVRStep
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>AsteriskIVRStep</legend>
+
+    <div class="display-label">KeyPress</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.KeyPress)
+    </div>
+
+    <div class="display-label">Action</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Action)
+    </div>
+
+    <div class="display-label">Data</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Data)
+    </div>
+
+    <div class="display-label">Submenu</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Submenu)
+    </div>
+
+    <div class="display-label">Step</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Step)
+    </div>
+
+    <div class="display-label">GoToStep</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GoToStep)
+    </div>
+
+    <div class="display-label">AsteriskIVRDefinition</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AsteriskIVRDefinition.Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.AsteriskIVRStepID }) |
+     @Html.ActionLink("Back to List", "Details","IVRDef",new { id = ViewBag.IVRDefenitionID}, null)
+</p>

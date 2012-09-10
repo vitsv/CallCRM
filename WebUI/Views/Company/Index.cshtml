@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Domain.Entities.Company>
+@{
+    ViewBag.Title = "Index";
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#radio").buttonset();
+        $("#radio").change(function () {
+            $('#stage-filter').submit();
+        }
+            );
+    });
+</script>
+<h2>Company contacts</h2>
+<p>
+    <span style="margin: 5px;">
+        <img src="../../Content/images/add.png" style="top: 5px; position: relative;" />@Html.ActionLink("Add new Person", "Create")</span>
+    <span style="margin: 5px;">
+        <img src="../../Content/images/add.png" style="top: 5px; position: relative;" />@Html.ActionLink("Add new Company", "Create", "Company")</span>
+</p>
+<div id="filters">
+    <form id="stage-filter" method="get">
+    <div id="radio" style="float: right;">
+        @foreach (var item in ViewBag.ContactStages)
+        {
+            if (item.ContactStageID.ToString() == ViewBag.Stage)
+            {
+            <input type="radio" id="@item.Name" value="@item.ContactStageID" name="stage" checked="checked" /><label for="@item.Name" style="color:@item.Color">@item.Name</label>
+            }
+            else
+            {
+            <input type="radio" id="@item.Name" value="@item.ContactStageID" name="stage" /><label for="@item.Name" style="color:@item.Color">@item.Name</label>
+            }
+        }
+        @if (ViewBag.Stage == "-1")
+        {
+            <input type="radio" id="all" value="-1" name="stage" checked="checked" /><label for="all">All</label>
+        }
+        else
+        {
+            <input type="radio" id="all" value="-1" name="stage" /><label for="all">All</label>
+        }
+    </div>
+    </form>
+</div>
+@if (Model.Count() > 0)
+{
+    <table width="100%">
+        <tr>
+            <th>Stage
+            </th>
+            <th>NAME
+            </th>
+            <th>DESCIPTION
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContactStage.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td width="150px">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CompanyID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.CompanyID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.CompanyID })
+                </td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <br />
+    <br />
+    <div style="left: 500px; position: relative;">
+        <img src="../../Content/images/no_records.png" alt="No Records" />
+        <h2>No records</h2>
+    </div>
+}

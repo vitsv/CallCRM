@@ -1,0 +1,25 @@
+﻿@model callCRM.Models.CONTACT_FIELD_TYPE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>CONTACT_FIELD_TYPE</legend>
+
+    <div class="display-label">NAME</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NAME)
+    </div>
+
+    <div class="display-label">LENGHT</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LENGHT)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

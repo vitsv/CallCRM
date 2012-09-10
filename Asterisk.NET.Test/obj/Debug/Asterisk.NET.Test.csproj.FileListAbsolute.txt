@@ -1,0 +1,11 @@
+C:\Users\Diesel\Downloads\Asterisk.NET.1.6.3.1\Asterisk.NET.1.6.3.1\Asterisk.NET.Test\bin\Debug\Asterisk.NET.Test.exe
+C:\Users\Diesel\Downloads\Asterisk.NET.1.6.3.1\Asterisk.NET.1.6.3.1\Asterisk.NET.Test\bin\Debug\Asterisk.NET.Test.pdb
+C:\Users\Diesel\Downloads\Asterisk.NET.1.6.3.1\Asterisk.NET.1.6.3.1\Asterisk.NET.Test\bin\Debug\Asterisk.NET.dll
+C:\Users\Diesel\Downloads\Asterisk.NET.1.6.3.1\Asterisk.NET.1.6.3.1\Asterisk.NET.Test\bin\Debug\Asterisk.NET.pdb
+C:\Users\Diesel\Downloads\Asterisk.NET.1.6.3.1\Asterisk.NET.1.6.3.1\Asterisk.NET.Test\obj\Debug\Asterisk.NET.Test.exe
+C:\Users\Diesel\Downloads\Asterisk.NET.1.6.3.1\Asterisk.NET.1.6.3.1\Asterisk.NET.Test\obj\Debug\Asterisk.NET.Test.pdb
+C:\Users\Diesel\Downloads\Asterisk.NET.1.6.3.1\Asterisk.NET.1.6.3.1\Asterisk.NET.Test\obj\Debug\Asterisk.NET.Test.fastagi-mapping.resources
+C:\Users\Diesel\Downloads\Asterisk.NET.1.6.3.1\Asterisk.NET.1.6.3.1\Asterisk.NET.Test\obj\Debug\Asterisk.NET.Test.csprojResolveAssemblyReference.cache
+C:\Users\Diesel\Downloads\Asterisk.NET.1.6.3.1\Asterisk.NET.1.6.3.1\Asterisk.NET.Test\obj\Debug\Asterisk.NET.Test.csproj.GenerateResource.Cache
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\Asterisk.NET.Test\obj\Debug\Asterisk.NET.Test.exe
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\Asterisk.NET.Test\obj\Debug\Asterisk.NET.Test.pdb

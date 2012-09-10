@@ -1,0 +1,90 @@
+﻿@model Domain.Entities.Client
+@{
+    ViewBag.Title = "Details";
+    var CustomFields = ViewData["CustomFields"] as List<Domain.Entities.ContactFieldType>;
+    var CustomFieldsValues = ViewData["CustomFieldsValues"] as List<Domain.Entities.ContactField>;
+}
+<style type="text/css">
+    .display-label {
+        font-weight: bold;
+    }
+</style>
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Person</legend>
+    <img src="../../Content/images/UserNoName.png" style="float: right; margin: 20px 5px;" />
+
+    <div class="display-label">Stage</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContactStage.Name)
+    </div>
+
+    <div class="display-label">Company</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Company.Name)
+    </div>
+
+    <div class="display-label">Assigned to</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Employee.FirstName)
+        @Html.DisplayFor(model => model.Employee.LastName)
+    </div>
+
+    <div class="display-label">Fisrt Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirstName)
+    </div>
+
+    <div class="display-label">Last Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastName)
+    </div>
+
+    <div class="display-label">Gender</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Gender)
+    </div>
+
+    <div class="display-label">Birth date</div>
+    <div class="display-field">
+        @String.Format("{0:d}", Model.BirthDate)
+    </div>
+
+    <div class="display-label">Position</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Position)
+    </div>
+
+    <div class="display-label">
+        Phone number
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PhoneNumber)
+    </div>
+
+    <div class="display-label">Create date</div>
+    <div class="display-field">
+        @String.Format("{0:g}", Model.CreationDate)
+    </div>
+
+    @foreach (var item in CustomFields)
+    {
+        <div class="editor-label">
+            <b>@item.Name</b>
+        </div>
+        <div class="display-field">
+            @foreach (var fieldVal in CustomFieldsValues)
+            {
+                if (fieldVal.ContactFieldTypeID == item.ContactFieldTypeID)
+                {
+                <p>@fieldVal.Value</p>
+                }
+            }
+        </div>     
+    }
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ClientID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

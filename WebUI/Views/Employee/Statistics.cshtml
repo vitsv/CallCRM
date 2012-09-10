@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Domain.Entities.AgentStats>
+
+@{
+    ViewBag.Title = "Statistics";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Statistics</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>
+                Operator
+            </th>
+            <th>
+                Received calls
+            </th>
+            <th>
+                Maked calls
+            </th>
+            <th>
+                E-mails
+            </th>
+            <th>
+                Meetings
+            </th>
+            <th>
+                Sum
+            </th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Person)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Column1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Column2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Column3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Column4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sum)
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

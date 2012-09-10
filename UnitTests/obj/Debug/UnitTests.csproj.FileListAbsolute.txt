@@ -1,0 +1,17 @@
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\UnitTests\bin\Debug\UnitTests.dll
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\UnitTests\bin\Debug\UnitTests.pdb
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\UnitTests\bin\Debug\Domain.dll
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\UnitTests\bin\Debug\Moq.dll
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\UnitTests\bin\Debug\Ninject.dll
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\UnitTests\bin\Debug\WebUI.dll
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\UnitTests\bin\Debug\EntityFramework.dll
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\UnitTests\bin\Debug\Domain.pdb
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\UnitTests\bin\Debug\WebUI.pdb
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\UnitTests\bin\Debug\Moq.pdb
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\UnitTests\bin\Debug\Moq.xml
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\UnitTests\bin\Debug\Ninject.pdb
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\UnitTests\bin\Debug\Ninject.xml
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\UnitTests\bin\Debug\EntityFramework.xml
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\UnitTests\obj\Debug\UnitTests.dll
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\UnitTests\obj\Debug\UnitTests.pdb

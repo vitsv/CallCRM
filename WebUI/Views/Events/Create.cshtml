@@ -1,0 +1,115 @@
+﻿@model Domain.Entities.Event
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+@if (ViewBag.EventCategoryID != null)
+{
+    using (Html.BeginForm())
+    {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>EVENT</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ClientID, "PERSON")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ClientID", String.Empty)
+            @Html.ValidationMessageFor(model => model.ClientID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EventStatusID, "EVENT_STATUS")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("EventStatusID", String.Empty)
+            @Html.ValidationMessageFor(model => model.EventStatusID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EmployeeID, "EMPLOYEE")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("EmployeeID", String.Empty)
+            @Html.ValidationMessageFor(model => model.EmployeeID)
+        </div>
+
+        <div class="editor-label">
+            Inbound/Outbound
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Inbound, new SelectList(
+                  new List<Object>{ 
+                       new { value = "false" , text = "Outbound" },
+                       new { value = "true" , text = "Inbound"  }
+
+                    },
+                  "value",
+                  "text"))
+            @Html.ValidationMessageFor(model => model.Inbound)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsComplete)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.IsComplete, new SelectList(
+                  new List<Object>{ 
+                       new { value = "false" , text = "No" },
+                       new { value = "true" , text = "Yes"  }
+                    },
+                  "value",
+                  "text"))
+            @Html.ValidationMessageFor(model => model.IsComplete)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+        @if (ViewBag.EventCategory.IsTask == true)
+        {
+            <div class="editor-label">
+                @Html.LabelFor(model => model.IsPlanned)
+            </div>
+            <div class="editor-field">
+                @Html.DropDownListFor(model => model.IsPlanned, new SelectList(
+                  new List<Object>{ 
+                       new { value = "false" , text = "No" },
+                       new { value = "true" , text = "Yes"  }
+                    },
+                  "value",
+                  "text"))
+                @Html.ValidationMessageFor(model => model.IsPlanned)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.PlannedDate)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.PlannedDate)
+                @Html.ValidationMessageFor(model => model.PlannedDate)
+            </div>
+        }
+        <input type="hidden" name="EventCategoryID" value="@ViewBag.EventCategoryID" />
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+    }
+}
+else
+{
+    <h2>The category of event is not specified!</h2>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,0 +1,76 @@
+﻿@model Domain.Entities.Event
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>EVENT</legend>
+
+    <div class="display-label">PERSON</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Client.FirstName)
+        @Html.DisplayFor(model => model.Client.LastName)
+    </div>
+
+    <div class="display-label">EVENT_STATUS</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EventStatus.Name)
+    </div>
+
+    <div class="display-label">EVENT_CATEGORY</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EventCategory.Name)
+    </div>
+
+    <div class="display-label">EMPLOYEE</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Employee.LastName)
+    </div>
+
+    <div class="display-label">INBOUND</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Inbound)
+    </div>
+
+    <div class="display-label">IS_COMPLETED</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsComplete)
+    </div>
+
+    <div class="display-label">DESCRIPTION</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+    @if (ViewBag.EventCategory.IsTask == true)
+    {
+        <div class="display-label">IS_PLANNED</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.IsPlanned)
+        </div>
+
+        <div class="display-label">PLANNED_DATE</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PlannedDate)
+        </div>
+    }
+    <div class="display-label">CREATION_DATE</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreationDate)
+    </div>
+
+    <div class="display-label">MODIFY_DATE</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ModificationDate)
+    </div>
+
+    <div class="display-label">CREATED_BY</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedBy)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EventID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

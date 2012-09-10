@@ -1,0 +1,107 @@
+﻿@model IEnumerable<Domain.Entities.Event>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Events</h2>
+
+<p>
+    <span style="margin:5px;"><img src="../../Content/images/add.png" style="top:5px;position:relative;" />@Html.ActionLink("Create New", "PreCreate")</span>
+</p>
+<form method="get">
+        <div class="editor-label">
+            Assigned to:
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("employeeID")
+            <input type="submit" value="Go" />
+        </div>
+</form>
+<br />
+<table>
+    <tr>
+        <th>
+            Inbound
+        </th>
+        <th>
+            Client
+        </th>
+        <th>
+            Status
+        </th>
+        <th>
+            Category
+        </th>
+        <th>
+            Assigned to
+        </th>
+
+        <th>
+            Finished
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Is planned
+        </th>
+        <th>
+            Planned time
+        </th>
+        <th>
+            Created
+        </th>
+        <th>
+            Created by
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+            <td>
+            <img src="../../Content/images/@( (item.Inbound == true) ? "inbound.png" : "outbound.png")" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Client.FirstName)
+              @Html.DisplayFor(modelItem => item.Client.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventStatus.Name)
+        </td>
+        <td>
+            <img src="../../Content/images/@item.EventCategory.Icon" alt="@item.EventCategory.Name" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.LastName)
+        </td>
+
+        <td>
+            @(item.IsComplete == true ? "Yes" : "No" )
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @(item.IsPlanned == true ? "Yes" : "No")
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlannedDate)
+        </td>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.CreationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EventID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EventID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EventID })
+        </td>
+    </tr>
+}
+
+</table>

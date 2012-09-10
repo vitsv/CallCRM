@@ -1,0 +1,4 @@
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\Asterisk.NET\bin\Debug\Asterisk.NET.dll
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\Asterisk.NET\bin\Debug\Asterisk.NET.pdb
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\Asterisk.NET\obj\Debug\Asterisk.NET.dll
+C:\Users\Diesel\Documents\Visual Studio 2012\Projects\callCRM\Asterisk.NET\obj\Debug\Asterisk.NET.pdb

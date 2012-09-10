@@ -1,0 +1,38 @@
+﻿@model Domain.Entities.AsteriskIVRDefinition
+@{
+    ViewBag.Title = "Details";
+    List<Domain.Entities.AsteriskIVRStep> Steps = ViewBag.Steps;
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>AsteriskIVRDefinition</legend>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">Extention</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Extention)
+    </div>
+
+    <div class="display-label">CreationDate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreationDate)
+    </div>
+</fieldset>
+<div id="steps">
+    <h3>Steps</h3>
+
+    <p>
+        @Html.ActionLink("Create New", "Create", "IVRSteps", new { id = Model.AsteriskIVRDefinitionID }, null)
+    </p>
+    @Html.Partial("_Steps", Steps)
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AsteriskIVRDefinitionID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

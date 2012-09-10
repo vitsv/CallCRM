@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Domain.Entities.AsteriskIVRStep>
+
+@{
+    ViewBag.Title = "Index";
+}
+<table>
+    <tr>
+        <th>
+            KeyPress
+        </th>
+        <th>
+            Action
+        </th>
+        <th>
+            Data
+        </th>
+        <th>
+            Submenu
+        </th>
+        <th>
+            Step
+        </th>
+        <th>
+            GoToStep
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.KeyPress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Action)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Submenu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Step)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GoToStep)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit","IVRSteps", new { id=item.AsteriskIVRStepID },null) |
+            @Html.ActionLink("Details", "Details","IVRSteps",  new { id=item.AsteriskIVRStepID },null) |
+            @Html.ActionLink("Delete", "Delete","IVRSteps",  new { id=item.AsteriskIVRStepID },null)
+        </td>
+    </tr>
+}
+
+</table>
